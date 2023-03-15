@@ -174,3 +174,10 @@ img.src = 'myImage.png'
 ### 变形 Transforms
 
 - transform(a,b,c,d,e,f)
+
+## 组合 Compositing
+
+- globalCompositeOperation
+
+- clip
+  - 将当前正在构建的路径转换为当前的裁剪路径
