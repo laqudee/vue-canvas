@@ -138,3 +138,39 @@ img.src = 'myImage.png'
 
 - drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 
+## Transformations
+
+- 移动Translating
+- 旋转Torating
+- 缩放Scaling
+- 变形Transforms
+
+### 状态存储与状态恢复
+- save() 保存画布的所有状态
+- restore() 保存和恢复canvas状态，没有参数
+
+- 每一次save()，都会将当前状态存入栈中（先进后出）；每调一次restore()都会弹出一个状态覆盖当前状态（即恢复状态）
+
+### 移动 Translating
+
+- translate(x, y)
+  - x：左右偏移量
+  - y：上下偏移量
+
+- 变形之前先保存状态
+
+### 旋转 Rotating
+
+- rotate(angle)
+  - angle是旋转的角度，顺时针，以弧度为单位
+  - 旋转的中心点始终是canvas的原点，如果要改变它，需要translate方法
+
+### 缩放 Scaling
+
+- scale(x,y)
+  - x：水平缩放因子
+  - y：垂直缩放因子
+
+### 变形 Transforms
+
+- transform(a,b,c,d,e,f)

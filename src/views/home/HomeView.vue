@@ -3,6 +3,11 @@ import { ref, onMounted } from "vue";
 import SimpleLineImage from "./components/SimpleLineImage.vue";
 import Scaling from "./components/Scaling.vue";
 // import Slicing from "./components/Slicing.vue";
+import SaveAndRestore from "./components/SaveAndRestore.vue";
+import Translate from "./components/Translate.vue";
+import Rotate from './components/Rotate.vue'
+import ScaleDemo from "./components/ScaleDemo.vue";
+import TransformDemo from "./components/Transform.vue"
 
 const cvh = ref(null)
 function draw() {
@@ -31,6 +36,11 @@ onMounted(() => {
     <SimpleLineImage />
     <Scaling />
     <!-- <Slicing /> -->
+    <SaveAndRestore />
+    <Translate />
+    <Rotate />
+    <ScaleDemo />
+    <TransformDemo />
   </div>
 </template>
 

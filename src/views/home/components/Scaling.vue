@@ -8,9 +8,9 @@ function draw() {
 
   let img = new Image();
   img.onload = () => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
-        ctx.drawImage(img, j * 50, i * 40, 50, 40);
+        ctx.drawImage(img, j * 50, i * 38, 50, 40);
       }
     }
   };
@@ -23,7 +23,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas ref="cvs" width="200" height="150"></canvas>
+  <div>
+    <canvas ref="cvs" width="200" height="150"></canvas>
+  </div>
 </template>
 
 <style></style>
