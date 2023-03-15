@@ -8,6 +8,12 @@ import RgbaDemo from "./components/RgbaDemo.vue";
 import LineWidth from "./components/LineWidth.vue";
 import LineJoin from "./components/LineJoin.vue";
 import MiterLimit from "./components/MiterLimit.vue";
+import LineDash from "./components/LineDash.vue";
+import Gradients from "./components/Gradients.vue";
+import RadialGradient from "./components/RadialGradient.vue";
+import CreatePattern from "./components/CreatePattern.vue";
+import Shadows from './components/Shadows.vue';
+import FillRule from "./components/FillRule.vue";
 
 const cv = ref(null);
 
@@ -114,6 +120,12 @@ onMounted(() => {
     <LineWidth />
     <LineJoin />
     <MiterLimit />
+    <LineDash />
+    <Gradients />
+    <RadialGradient />
+    <CreatePattern />
+    <Shadows />
+    <FillRule />
   </div>
 </template>
 
@@ -121,8 +133,10 @@ onMounted(() => {
 .canvas-wrapper {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 div {
+    margin-bottom: 20px;
     margin-right: 20px;
 }
 </style>

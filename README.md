@@ -64,10 +64,77 @@
 - lineJoin = type // 决定图像两线段连接处所显示的样式：round / bevel / miter，默认是miter
 - miterLimit = value // 用来设置外延与连接点的最大距离，如果交点大于此值，连接效果就会编程了bevel
 - getLineDash()
-- setLineDash()
+- setLineDash() // 使用虚线
 - lineDashOffset = value
 
+### 渐变Gradients
+
+- createLinearGradient(x1, y1, x2, y2)
+
+- createRadialGradient(x1, y1, r1, x2, y2, r2)
+
+- gradient.addColor(position, color)
+
+### 图案样式 Pattern
+
+- createPattern(image, type)
+- type
+  - repeat
+  - repeat-x
+  - repeat-y
+  - no-repeat
+
+### 阴影 Shadows
+
+- shadowOffsetX
+- shadowOffsetY
+- shadowBlur // 用于设定阴影的模糊程度
+- shadowColor // 标准的CSS颜色值
+
+### 填充规则
+- fill(type)
+
+- type:
+  - nonzero // 默认值
+  - evenodd
 ## 绘制文本
 
-- fillText(text, x,y, [,maxWidth])
+- `fillText(text, x,y, [,maxWidth])`
+  - 在指定(x,y)位置填充指定文本，最大宽度可选
+
+- `strokeText(text, x, y, [, maxWidth])`
+  - 绘制文本边框
+
+- font
+
+- textAlign: start, end, left, right, center // default: center
+
+- textBaseline: top, hanging, middle, alphabetic, ideographic, bottom
+
+- direction: ltr, rtl, inherit
+
+- measureText()
+  - 将返回一个 TextMetrics对象的宽度、所在像素，这些体现文本特性的属性
+
+## Use Image
+
+- 引入图像到canvas的步骤：
+  1. 获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以是URL
+  2. 使用 drawImage函数将图片绘制在画布上
+
+```js
+let img = new Image()
+img.onload = () => {
+    // run drawImage()
+}
+img.src = 'myImage.png'
+```
+
+- data:url
+
+- drawImage(image, x, y, width, height)
+
+### 切片 Slicing
+
+- drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 
