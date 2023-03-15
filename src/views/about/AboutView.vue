@@ -33,10 +33,6 @@ function draw() {
   ctx.fillStyle = 'rgba(0,0,200, 0.5)'
   ctx.fillRect(20, 20, 55, 50)
 
-  ctx.fillStyle = '#fff000'
-  ctx.fillRect(75, 75, 100, 100)
-  ctx.clearRect(95, 95, 60, 60)
-  ctx.strokeRect(100, 100, 50, 50)
 }
 
 const canvas2 = ref(null)
@@ -165,12 +161,12 @@ onMounted(() => {
 </script>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-
+div {
+  margin: 20px;
+}
 </style>

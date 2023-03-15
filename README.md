@@ -181,3 +181,20 @@ img.src = 'myImage.png'
 
 - clip
   - 将当前正在构建的路径转换为当前的裁剪路径
+
+## 动画的基本步骤
+
+1. 清空canvas
+2. 保存canvas状态
+3. 绘制动画图形
+4. 恢复canvas状态
+
+## 操控动画 Controlling an animation
+
+- 在for循环中完成动画是不太可能的
+
+- setInterval
+- setTimeout
+
+- window.setInterval(), window.setTimeout(), window.requestAnimationFrame()设定一个定期执行的函数
+

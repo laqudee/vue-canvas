@@ -9,6 +9,8 @@ import Rotate from "./components/Rotate.vue";
 import ScaleDemo from "./components/ScaleDemo.vue";
 import TransformDemo from "./components/Transform.vue";
 import CompositingClip from "./components/CompositingClip.vue";
+import Animation from "./components/Animation.vue";
+import AnimalClock from "./components/AnimalClock.vue";
 
 const cvh = ref(null);
 function draw() {
@@ -41,6 +43,8 @@ onMounted(() => {
     <ScaleDemo />
     <TransformDemo />
     <CompositingClip />
+    <Animation />
+    <AnimalClock />
   </div>
 </template>
 
