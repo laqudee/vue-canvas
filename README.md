@@ -35,7 +35,39 @@
 - quadraticCurveTo(cp1x, cp1y, x, y)
 - bezierCurveTo(cp1x, cp1y, cp2x, cp27, x, y)
 
+## Path2D对象
+
+- 返回一个新初始化的Path2D对象
+
+- new Path2D()
+- new Path2D(path)
+- new Path2D(d) // 从SVG建立Path对象
+
+- 所有的路径方法都可以在Path2D中使用
+
+- Path2D.addPath(path [, transform])
+
+## styles and colors
+
+- ctx.fillStyle
+- ctx.strokeStyle
+
+- 透明度Transparency
+- ctx.globalAlha示例
+
+- rgba
+
+### 线型Line Styles
+
+- lineWidth = value
+- lineCap = type // 线段端点的样式，butt / round / squre; 默认是butt
+- lineJoin = type // 决定图像两线段连接处所显示的样式：round / bevel / miter，默认是miter
+- miterLimit = value // 用来设置外延与连接点的最大距离，如果交点大于此值，连接效果就会编程了bevel
+- getLineDash()
+- setLineDash()
+- lineDashOffset = value
 
 ## 绘制文本
 
 - fillText(text, x,y, [,maxWidth])
+

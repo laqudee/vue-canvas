@@ -167,13 +167,10 @@ onMounted(() => {
 <style>
 @media (min-width: 1024px) {
   .about {
-    min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 
-tutorial {
-  border: 1px solid black;
-}
 </style>
