@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/home/HomeView.vue";
+import AnimationWrapper from '../views/animation/wrapper.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,9 +24,21 @@ const router = createRouter({
       component: () => import("../views/canvas/CanvasOne.vue"),
     },
     {
-      path: "/mouse-tracking",
-      name: "mouseTracking",
-      component: () => import("../views/animation/MouseTracking.vue"),
+      path: "/animations",
+      redirect: '/animations/a-ball',
+      component: AnimationWrapper,
+      children: [
+        {
+          path: 'a-ball',
+          name: 'aball',
+          component: () => import('../views/animation/ABall.vue')
+        },
+        {
+          path: 'image-data',
+          name: 'imageData',
+          component: () => import('../views/animation/ImageData.vue')
+        }
+      ]
     },
   ],
 });

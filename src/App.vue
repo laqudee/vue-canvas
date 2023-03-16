@@ -13,7 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Canvas</RouterLink>
         <RouterLink to="/canvas-one">CanvasOne</RouterLink>
-        <!-- <RouterLink to="/mouse-tracking">Mouse Tracking</RouterLink> -->
+        <RouterLink to="/animations">Animations</RouterLink>
       </nav>
     </div>
   </header>
