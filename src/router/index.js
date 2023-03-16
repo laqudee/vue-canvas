@@ -37,6 +37,16 @@ const router = createRouter({
           path: 'image-data',
           name: 'imageData',
           component: () => import('../views/animation/ImageData.vue')
+        },
+        {
+          path: 'invert-grayscale',
+          name: 'invertAndGrayscale',
+          component: () => import('../views/animation/InvertAndGrayscale.vue')
+        },
+        {
+          path: 'zoom-smoothing',
+          name: 'zoomSmoothing',
+          component: () => import('../views/animation/ZoomSmoothing.vue')
         }
       ]
     },

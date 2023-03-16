@@ -200,3 +200,100 @@ img.src = 'myImage.png'
 
 - window.requestAnimationFrame()
   - 提供更有效并且更加平缓的方式来执行动画
+
+## 像素操作
+
+- 直接通过ImageData对象操纵像素数据，直接读取或将数据数组写到该对象中
+
+- ImageData对象中存储着canvas对象真实的像素数据
+  - width
+  - height
+  - data（Uint8ClampedArry），一维数组，包含着RGBA格式的整型数据，范围0~255
+
+- height x width x 4字节数据
+
+```js
+// 读取图片中位于第50行，第300列的像素的蓝色部分
+blueComponent = imageData.data[((50 * (imageData.width * 4)) + (200 * 4)) + 2]
+
+// 根据行、列读取某像素点的RGBA值的公式
+imageData.data[((50 * (imageData.width * 4)) + (200 * 4)) + 0/1/2/3]
+
+// 使用Uint8ClampedArray.length属性读取像素数组的大小（以字节为单位）
+let numBytes = imageData.data.length
+```
+
+### 创建一个空白的ImageData对象
+
+```js
+// 默认像素为透明黑
+let myImageData = ctx.createImageData(width, height)
+
+let myImageData2 = ctx.createImageData(anotherImageData)
+```
+
+### 得到场景数据
+
+```js
+let myImageData = ctx.getImageData(letf, top, width, height)
+```
+
+### 在场景中写入像素数据
+
+```js
+ctx.putImageData(myImageData, dx, dy)
+```
+
+### 图片的灰度与反相颜色
+
+- invert():减掉颜色的最大色值255
+- gray(): 用红绿和蓝色的平均值，也可以使用加权平均
+  - x = 0.299r + 0.587g + 0.114b
+
+### 缩放与反锯齿
+
+- imageSmoothingEnabled属性
+
+```js
+zoomctx.drawImage(canvas, Math.abs(x - 5), Math.abs(y - 5), 10, 10, 0, 0, 200, 200)
+```
+
+### 保存图片
+
+- canvas.toDataURL('img/png', quality)
+  - quality: 0 --> 1
+
+- canvas.toBlob(callback, type, encoderOptions)
+
+## 性能优化
+
+- 在离屏canvas上预渲染相似的图形或重复的对象
+- 避免浮点数的坐标点，使用整数
+- 不要在用drawImage()时缩放图像
+- 使用多层画布去画一个复杂的场景
+
+```html
+<div id="stage">
+  <canvas id="ui-layer" width="480" height="320"></canvas>
+  <canvas id="game-layer" width="480" height="320"></canvas>
+  <canvas id="background-layer" width="480" height="320"></canvas>
+</div>
+
+<style>
+  #stage {
+    width: 480px;
+    height: 320px;
+    position: relative;
+    border: 2px solid black
+  }
+  canvas { position: absolute; }
+  #ui-layer { z-index: 3 }
+  #game-layer { z-index: 2 }
+  #background-layer { z-index: 1 }
+</style>
+
+```
+
+- 用 CSS 设置大的背景图
+
+- 关闭透明度

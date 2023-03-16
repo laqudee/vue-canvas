@@ -6,6 +6,8 @@ import { ref, onMounted } from "vue";
   <nav>
     <RouterLink to="/animations/a-ball">A Ball</RouterLink>
     <RouterLink to="/animations/image-data">ImageData</RouterLink>
+    <RouterLink to="/animations/invert-grayscale">Invert Grayscale</RouterLink>
+    <RouterLink to="/animations/zoom-smoothing">Zoom Smoothing</RouterLink>
   </nav>
   <div class="wrapper">
     <RouterView></RouterView>
