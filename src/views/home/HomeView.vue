@@ -11,6 +11,7 @@ import TransformDemo from "./components/Transform.vue";
 import CompositingClip from "./components/CompositingClip.vue";
 import Animation from "./components/Animation.vue";
 import AnimalClock from "./components/AnimalClock.vue";
+import ImageCycle from "./components/ImageCycle.vue";
 
 const cvh = ref(null);
 function draw() {
@@ -45,6 +46,7 @@ onMounted(() => {
     <CompositingClip />
     <Animation />
     <AnimalClock />
+    <ImageCycle />
   </div>
 </template>
 

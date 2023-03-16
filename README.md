@@ -198,3 +198,5 @@ img.src = 'myImage.png'
 
 - window.setInterval(), window.setTimeout(), window.requestAnimationFrame()设定一个定期执行的函数
 
+- window.requestAnimationFrame()
+  - 提供更有效并且更加平缓的方式来执行动画
