@@ -1,5 +1,7 @@
 # vue-canvas
 
+> @author laqudee
+
 ## 绘制矩形
 
 - canvas支持矩形和路径（一系列点连成的线段）
