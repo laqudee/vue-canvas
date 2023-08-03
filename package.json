@@ -11,7 +11,9 @@
   "dependencies": {
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "js-cookie": "^3.0.1",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

@@ -50,6 +50,11 @@ const router = createRouter({
         }
       ]
     },
+    {
+      path: '/iframe-test',
+      name: 'iframeTest',
+      component: () => import('../views/iframe/index.vue')
+    }
   ],
 });
 

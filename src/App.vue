@@ -1,19 +1,30 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, onMounted } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+import cookie from "js-cookie";
+// import Cookie from "universal-cookie";
+
+// const cookie = new Cookie();
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Canvas</RouterLink>
         <RouterLink to="/canvas-one">CanvasOne</RouterLink>
         <RouterLink to="/animations">Animations</RouterLink>
+        <RouterLink to="/iframe-test">Iframe</RouterLink>
       </nav>
     </div>
   </header>
