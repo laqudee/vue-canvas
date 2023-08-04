@@ -1,9 +1,12 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
 
+const router = useRouter();
+const instance = getCurrentInstance().proxy;
+
 const kcRef = ref(null);
-const src = " http://192.168.22.77:8001/#/";
+const src = " http://192.168.22.77:8000/#/";
 
 const iframeInit = () => {
   const iframe = kcRef.value;
@@ -13,6 +16,7 @@ const iframeInit = () => {
     iframe.contentWindow.postMessage(
       {
         token: "get_token",
+        // token: "cba9fd30805e4c23bc1c02ad2da3d89d"
       },
       src
     );
@@ -39,6 +43,10 @@ const iframeInit = () => {
       "message",
       (e) => {
         console.log("从子获得：", e.data);
+        // router.go(-1);
+        // router.back();
+        // router.push({name: 'home'})
+
         iframe.contentWindow.postMessage(
           JSON.stringify({
             token: "get_token_get",
